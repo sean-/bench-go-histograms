@@ -20,7 +20,6 @@ Benchmark_PromApproxCount/SampleCount-10           	1000000000	         0.000005
 PASS
 ok  	github.com/sean-/bench-go-histograms	4.399s
 
-bench-go-histograms on  main [!?] via 🐹 v1.21.5 using ☁️  default/cockroach-ephemeral took 4.8s
 $ go version
 go version go1.21.5 darwin/arm64
 ```
