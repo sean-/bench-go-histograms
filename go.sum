@@ -17,6 +17,8 @@ github.com/matttproud/golang_protobuf_extensions v1.0.4 h1:mmDVorXM7PCGKw94cs5zk
 github.com/matttproud/golang_protobuf_extensions v1.0.4/go.mod h1:BSXmuO+STAnVfrANrmjBb36TMTDstsz7MSK+HVaYKv4=
 github.com/openhistogram/circonusllhist v0.3.0 h1:CuEawy94hKEzjhSABdqkGirl6o67QrqtRoZg3CXBn6k=
 github.com/openhistogram/circonusllhist v0.3.0/go.mod h1:PfeYJ/RW2+Jfv3wTz0upbY2TRour/LLqIm2K2Kw5zg0=
+github.com/openhistogram/circonusllhist v0.4.0 h1:t77KqrahIG/iuJqTBNDBwyHu1dkvbCg30amo/TB4gKM=
+github.com/openhistogram/circonusllhist v0.4.0/go.mod h1:PfeYJ/RW2+Jfv3wTz0upbY2TRour/LLqIm2K2Kw5zg0=
 github.com/prometheus/client_golang v1.16.0 h1:yk/hx9hDbrGHovbci4BY+pRMfSuuat626eFsHb7tmT8=
 github.com/prometheus/client_golang v1.16.0/go.mod h1:Zsulrv/L9oM40tJ7T815tM89lFEugiJ9HzIqaAx4LKc=
 github.com/prometheus/client_golang v1.17.0 h1:rl2sfwZMtSthVU752MqfjQozy7blglC+1SOtjMAMh+Q=
