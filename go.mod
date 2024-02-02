@@ -19,3 +19,5 @@ require (
 	golang.org/x/sys v0.11.0 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 )
+
+replace github.com/jaswdr/faker v1.19.1 => github.com/sean-/faker v0.0.0-20231230002109-081f14dffd4c

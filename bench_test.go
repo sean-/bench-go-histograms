@@ -12,24 +12,23 @@ import (
 )
 
 const (
-	minTime  = 0 * time.Nanosecond
-	maxTime  = 10 * time.Second
-	randSeed = 42
+	minTime = 1 * time.Nanosecond
+	maxTime = 10 * time.Second
 )
+
+var randSeed int64 = rand.Int63()
 
 func randDuration(f *faker.Faker, min, max time.Duration) time.Duration {
 	i := f.IntBetween(int(min), int(max))
-	return time.Duration(i) * time.Nanosecond
+	return time.Duration(i)
 }
 
 func Benchmark_CircLLHistDuration(b *testing.B) {
 	h1 := circonusllhist.New()
 	f := faker.NewWithSeed(rand.NewSource(randSeed))
 
-	b.RunParallel(func(pb *testing.PB) {
-		for pb.Next() {
-			h1.RecordDuration(randDuration(&f, minTime, maxTime))
-		}
+	b.Run("CircLLHistDuration", func(pb *testing.B) {
+		h1.RecordDuration(randDuration(&f, minTime, maxTime))
 	})
 }
 
@@ -118,17 +117,15 @@ func Benchmark_CircLLHistQuantile(b *testing.B) {
 	})
 }
 
-// func Benchmark_CircLLHistDurationNoLookup(b *testing.B) {
-// 	h1 := circonusllhist.NewNoLocks()
-// 	f := faker.NewWithSeed(rand.NewSource(randSeed))
+func Benchmark_CircLLHistDurationNoLookup(b *testing.B) {
+	h1 := circonusllhist.NewNoLocks()
+	f := faker.NewWithSeed(rand.NewSource(randSeed))
 
-// 	b.RunParallel(func(pb *testing.PB) {
-// 		for pb.Next() {
-// 			d := randDuration(&f, minTime, maxTime)
-// 			h1.RecordDuration(d)
-// 		}
-// 	})
-// }
+	b.Run("CircLLHistDurationNoLookup", func(pb *testing.B) {
+		d := randDuration(&f, minTime, maxTime)
+		h1.RecordDuration(d)
+	})
+}
 
 func Benchmark_PromDuration(b *testing.B) {
 	h1 := prometheus.NewHistogram(prometheus.HistogramOpts{
@@ -157,8 +154,8 @@ func Benchmark_PromApproxSum(b *testing.B) {
 		}
 	})
 
-	m := &prometheusgo.Metric{}
 	b.Run("SampleSum", func(b *testing.B) {
+		m := &prometheusgo.Metric{}
 		if err := h1.Write(m); err != nil {
 			_ = err // b.Skip()
 		}
@@ -182,8 +179,8 @@ func Benchmark_PromApproxCount(b *testing.B) {
 		}
 	})
 
-	m := &prometheusgo.Metric{}
 	b.Run("SampleCount", func(b *testing.B) {
+		m := &prometheusgo.Metric{}
 		if err := h1.Write(m); err != nil {
 			_ = err // b.Skip()
 		}
