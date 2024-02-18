@@ -13,6 +13,7 @@ github.com/jaswdr/faker v1.18.0 h1:sJ8HQLxvNRH+Ond1pTLR01BAxMN0iuYe+6aD30H0cRE=
 github.com/jaswdr/faker v1.18.0/go.mod h1:x7ZlyB1AZqwqKZgyQlnqEG8FDptmHlncA5u2zY/yi6w=
 github.com/jaswdr/faker v1.19.1 h1:xBoz8/O6r0QAR8eEvKJZMdofxiRH+F0M/7MU9eNKhsM=
 github.com/jaswdr/faker v1.19.1/go.mod h1:x7ZlyB1AZqwqKZgyQlnqEG8FDptmHlncA5u2zY/yi6w=
+github.com/jaswdr/faker/v2 v2.1.0/go.mod h1:ROK8xwQV0hYOLDUtxCQgHGcl10jbVzIvqHxcIDdwY2Q=
 github.com/matttproud/golang_protobuf_extensions v1.0.4 h1:mmDVorXM7PCGKw94cs5zkfA9PSy5pEvNWRP0ET0TIVo=
 github.com/matttproud/golang_protobuf_extensions v1.0.4/go.mod h1:BSXmuO+STAnVfrANrmjBb36TMTDstsz7MSK+HVaYKv4=
 github.com/openhistogram/circonusllhist v0.3.0 h1:CuEawy94hKEzjhSABdqkGirl6o67QrqtRoZg3CXBn6k=
