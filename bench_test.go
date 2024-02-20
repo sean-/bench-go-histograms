@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/jaswdr/faker"
+	"github.com/jaswdr/faker/v2"
 	"github.com/openhistogram/circonusllhist"
 	"github.com/prometheus/client_golang/prometheus"
 	prometheusgo "github.com/prometheus/client_model/go"
@@ -27,8 +27,21 @@ func Benchmark_CircLLHistDuration(b *testing.B) {
 	h1 := circonusllhist.New()
 	f := faker.NewWithSeed(rand.NewSource(randSeed))
 
-	b.Run("CircLLHistDuration", func(pb *testing.B) {
-		h1.RecordDuration(randDuration(&f, minTime, maxTime))
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			h1.RecordDuration(randDuration(&f, minTime, maxTime))
+		}
+	})
+}
+
+func Benchmark_CircLLHistDurationNoLookup(b *testing.B) {
+	h1 := circonusllhist.New(circonusllhist.NoLookup())
+	f := faker.NewWithSeed(rand.NewSource(randSeed))
+
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			h1.RecordDuration(randDuration(&f, minTime, maxTime))
+		}
 	})
 }
 
@@ -117,11 +130,11 @@ func Benchmark_CircLLHistQuantile(b *testing.B) {
 	})
 }
 
-func Benchmark_CircLLHistDurationNoLookup(b *testing.B) {
+func Benchmark_CircLLHistDurationNoLocks(b *testing.B) {
 	h1 := circonusllhist.NewNoLocks()
 	f := faker.NewWithSeed(rand.NewSource(randSeed))
 
-	b.Run("CircLLHistDurationNoLookup", func(pb *testing.B) {
+	b.Run("CircLLHistDurationNoLocks", func(b *testing.B) {
 		d := randDuration(&f, minTime, maxTime)
 		h1.RecordDuration(d)
 	})
