@@ -8,7 +8,7 @@ $ go test -test.bench=. -benchmem
 goos: darwin
 goarch: arm64
 pkg: github.com/sean-/bench-go-histograms
-Benchmark_CircLLHistDuration-10     	                 7221150	             149.7 ns/op	       0 B/op	       0 allocs/op
+Benchmark_CircLLHistDuration-10                        7221150	             149.7 ns/op	       0 B/op	       0 allocs/op
 Benchmark_CircLLHistApproxSum/ApproxSum-10         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
 Benchmark_CircLLHistBinCount/BinCount-10           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
 Benchmark_CircLLHistBuckets/Count-10               	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
