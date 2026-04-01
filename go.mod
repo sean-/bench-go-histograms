@@ -1,12 +1,12 @@
 module github.com/sean-/bench-go-histograms
 
-go 1.22
+go 1.22.0
 
 require (
 	github.com/jaswdr/faker/v2 v2.9.1
 	github.com/openhistogram/circonusllhist v0.4.1
 	github.com/prometheus/client_golang v1.21.1
-	github.com/prometheus/client_model v0.6.1
+	github.com/prometheus/client_model v0.6.2
 )
 
 require (
@@ -18,7 +18,7 @@ require (
 	github.com/prometheus/common v0.62.0 // indirect
 	github.com/prometheus/procfs v0.15.1 // indirect
 	golang.org/x/sys v0.28.0 // indirect
-	google.golang.org/protobuf v1.36.1 // indirect
+	google.golang.org/protobuf v1.36.6 // indirect
 )
 
 replace github.com/jaswdr/faker v1.19.1 => github.com/sean-/faker v0.0.0-20231230002109-081f14dffd4c
