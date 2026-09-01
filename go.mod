@@ -6,7 +6,7 @@ require (
 	github.com/jaswdr/faker/v2 v2.9.1
 	github.com/openhistogram/circonusllhist v0.4.1
 	github.com/prometheus/client_golang v1.24.1
-	github.com/prometheus/client_model v0.6.2
+	github.com/prometheus/client_model v0.6.3
 )
 
 require (
@@ -19,7 +19,7 @@ require (
 	github.com/prometheus/procfs v0.21.1 // indirect
 	go.yaml.in/yaml/v2 v2.4.4 // indirect
 	golang.org/x/sys v0.47.0 // indirect
-	google.golang.org/protobuf v1.36.11 // indirect
+	google.golang.org/protobuf v1.36.12 // indirect
 )
 
 replace github.com/jaswdr/faker v1.19.1 => github.com/sean-/faker v0.0.0-20231230002109-081f14dffd4c
