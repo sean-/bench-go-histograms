@@ -3,7 +3,7 @@ module github.com/sean-/bench-go-histograms
 go 1.25.0
 
 require (
-	github.com/jaswdr/faker/v2 v2.9.1
+	github.com/jaswdr/faker/v2 v2.10.0
 	github.com/openhistogram/circonusllhist v0.4.1
 	github.com/prometheus/client_golang v1.24.1
 	github.com/prometheus/client_model v0.6.2
